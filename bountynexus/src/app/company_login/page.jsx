@@ -147,7 +147,11 @@ export default function Login() {
 
     // Only redirect to dashboard if login is successful
     if (res.ok) {
+<<<<<<< HEAD
       router.replace("/company_dashboard"); // Redirect to dashboard
+=======
+      router.replace("/dashboard"); // Redirect to dashboard
+>>>>>>> 80a4a7722e78f47533a11d6a6c7aa650c08ad7c5
     }
   };
 

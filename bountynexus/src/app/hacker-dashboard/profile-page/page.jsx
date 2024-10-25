@@ -2,22 +2,42 @@
 'use client';
 
 
-import React from 'react';
+// import React from 'react';
 import './profile-page.css';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import styles from "./profile-page.css";
 
 
 const Profile = () => {
+
+  const router = useRouter();
+
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
   // Sample data; replace this with your API data later
+  // const hacker = {
+  //   name: "Ducati Panigale V4",
+  //   email: "ducati.panigalev4@example.com",
+  //   profilePicture: "https://wallpapercave.com/wp/wp3754424.jpg",
+  //   feedbacks: [
+  //     "Found a SQL injection vulnerability in the login form.",
+  //     "Discovered an XSS issue on the homepage.",
+  //     "Identified a CSRF vulnerability in the settings page."
+  //   ]
+  // };
+
   const hacker = {
-    name: "Ducati Panigale V4",
-    email: "ducati.panigalev4@example.com",
+    name: "Louie Smith", // Replace with dynamic username
+    email: "louie.smith@example.com", // Replace with dynamic email
     profilePicture: "https://wallpapercave.com/wp/wp3754424.jpg",
     feedbacks: [
-      "Found a SQL injection vulnerability in the login form.",
-      "Discovered an XSS issue on the homepage.",
-      "Identified a CSRF vulnerability in the settings page."
+      "Great job on the recent bug fix! - User 1",
+      "Really appreciated your help! - User 2",
+      "Excellent work on the vulnerabilities report! - User 3"
     ]
   };
 
@@ -52,69 +72,32 @@ const Profile = () => {
         </div>
       </div>
 
-     
+      <div className="main-content">
+        {/* Main Profile Section */}
+        <div className="profile-details">
+          <div className="profile-header">
+            <Image src="/assets/logo.png" alt="Profile Photo" width={150} height={150} className="profile-photo" />
+            <h1>Louie Smith</h1> {/* Replace with dynamic username */}
+            <p>Email: louie.smith@example.com</p> {/* Replace with dynamic email */}
+            <p>Username: louie_smith</p>
+          </div>
 
-      
-    
-      
-    <div style={styles.container}>
-      <img src={hacker.profilePicture} alt="Profile Picture" style={styles.profilePicture} />
-      <h1 style={styles.title}>{hacker.name}</h1>
-      <p style={styles.email}>{hacker.email}</p>
-      <h2 className={styles.feedbackTitle}>Feedbacks:</h2>
-      <ul className={styles.feedbackList}>
-        {hacker.feedbacks.length > 0 ? (
-          hacker.feedbacks.map((feedback, index) => (
-            <li key={index} className={styles.feedbackItem}>{feedback}</li>
-          ))
-        ) : (
-          <li className={styles.feedbackItem}>No feedback available.</li>
-        )}
-      </ul>
-    </div>
+          {/* Feedback Section */}
+          <div className="feedback-section">
+            <h2>Feedback Received</h2>
+            <ul className="feedback-list">
+              {hacker.feedbacks.map((feedback, index) => (
+                <li key={index} className="feedback-item">{feedback}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   );
 };
 
-const styles = {
-  container: {
-    maxWidth: '600px',
-    margin: '0 auto',
-    padding: '20px',
-    fontFamily: 'Arial, sans-serif',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '2rem',
-    margin: '10px 0',
-  },
-  profilePicture: {
-    borderRadius: '50%',
-    width: '150px',
-    height: '150px',
-    marginBottom: '20px',
-  },
-  email: {
-    fontSize: '1.2rem',
-    color: '#555',
-    marginBottom: '20px',
-  },
-  feedbackTitle: {
-    fontSize: '1.5rem',
-    marginTop: '30px',
-  },
-  feedbackList: {
-    listStyleType: 'none',
-    padding: '0',
-  },
-  feedbackItem: {
-    background: '#f9f9f9',
-    border: '1px solid #ddd',
-    borderRadius: '5px',
-    padding: '10px',
-    marginBottom: '10px',
-  }
-};
 
 export default Profile;
