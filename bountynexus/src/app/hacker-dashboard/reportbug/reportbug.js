@@ -1,18 +1,50 @@
 'use client';
 import React, { useState } from 'react';
 import './reportbug.css';
+import { useRouter } from 'next/navigation';
 
-const SubmitBug = () => {
+export default function SubmitBug() 
+{
     const [email, setEmail] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [severity, setSeverity] = useState('');
+    const router = useRouter();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         // Here, you can handle the form submission and send the data to your backend
-        console.log({ email, title, description, severity });
-    };
+       // console.log({ email, title, description, severity });
+        const formData = {
+            email,
+            title,
+            description,
+            severity,
+          };
+            console.log(formData);
+
+          const res = await fetch('/api/addbugs', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          })
+          if (res.ok) {
+            const form = e.target;
+            router.push("/hacker-dashboard");
+            console.log(" successful");
+            }
+            else {
+              console.log("failed");
+              //console.log(res.statusText);
+          }    
+          //const data = await res.json();
+
+  // Handle the response data
+  //console.log(data); 
+           
+            }
 
     return (
         <div className="dark-theme">
@@ -41,4 +73,4 @@ const SubmitBug = () => {
     );
 };
 
-export default SubmitBug;
+//export default SubmitBug;

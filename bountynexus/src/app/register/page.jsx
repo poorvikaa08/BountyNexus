@@ -59,8 +59,8 @@ export default function HackerRegister() {
         form.reset(); // Clear form fields after successful registration
         router.push("/login");
       } else {
-        const data = await res.json();
-        setError(data.error || "Registration failed");
+        //const data = await res.json();
+        setError("Registration failed");
       }
     } catch (error) {
       console.error(error);
