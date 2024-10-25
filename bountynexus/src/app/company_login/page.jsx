@@ -139,6 +139,15 @@ console.log(email, password);
     } else {
       console.log("Login failed");
       setError("Invalid email or password");
+<<<<<<< HEAD
+=======
+      return;
+    }
+
+    // Only redirect to dashboard if login is successful
+    if (res.ok) {
+      router.replace("/company_dashboard"); // Redirect to dashboard
+>>>>>>> ee213ecb067a89fdd42b56fccca0bfb53eb89398
     }
   };
 
