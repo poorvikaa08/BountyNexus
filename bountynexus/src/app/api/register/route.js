@@ -17,13 +17,4 @@ export async function POST(request) {
 
 
     return NextResponse.json({message: "Success"});
-    // const res = await fetch("/api/register/hacker", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ fullName, username, email, password, agreeToTermsAndConditions, agreeToCodeOfEthics }),
-    // });
-    // const data = await res.json();
-    // return data;
 }

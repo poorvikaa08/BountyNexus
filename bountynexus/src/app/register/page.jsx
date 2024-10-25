@@ -59,8 +59,8 @@ export default function HackerRegister() {
         form.reset(); // Clear form fields after successful registration
         router.push("/login");
       } else {
-        //const data = await res.json();
-        setError("Registration failed");
+        const data = await res.json();
+        setError(data.error || "Registration failed");
       }
     } catch (error) {
       console.error(error);
@@ -176,7 +176,7 @@ export default function HackerRegister() {
         {/* Link to login */}
         <div className="button-container" style={{ textAlign: "center" }}>
           <Link href="/login">
-            Already have an account?  Login
+            Already have an account?  Login
           </Link>
         </div>
 
