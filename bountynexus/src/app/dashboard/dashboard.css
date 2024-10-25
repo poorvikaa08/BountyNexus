@@ -1,0 +1,149 @@
+/* dashboard.css */
+.dashboard {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Left-side Icon Section */
+  .icon-container {
+    width: 20%; /* 20% of the page for icons */
+    background-color: #f0f0f0; /* Light background color */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    padding-top: 50px; /* Top padding for icons */
+    position: fixed; /* Fix the dashboard to the left side */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .icon {
+    margin: 20px 0;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ffffff; /* Background for each icon */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .icon:hover {
+    background-color: #e0e0e0; /* Hover effect for icons */
+  }
+  
+  .tooltip {
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+  }
+  
+  /* Right-side Main Content Section */
+  .main-content {
+    margin-left: 20%; /* Space for the fixed dashboard */
+    width: 80%; /* Take up the remaining width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .icon-container {
+      width: 25%; /* Adjust icon container width */
+    }
+  
+    .main-content {
+      margin-left: 25%; /* Adjust for responsive view */
+      width: 75%; /* Adjust content width */
+    }
+  
+    h1 {
+      font-size: 2rem; /* Adjust title size */
+    }
+  
+    p {
+      font-size: 1rem; /* Adjust paragraph font size */
+    }
+  }
+
+
+
+
+    /* New STYLES from here */
+  /* Styles for the dashboard */
+.dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar Icons */
+  .icon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon:hover {
+    background-color: #888;
+  }
+  
+  .tooltip {
+    position: absolute;
+    left: 60px;
+    white-space: nowrap;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  

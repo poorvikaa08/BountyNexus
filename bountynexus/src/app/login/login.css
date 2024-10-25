@@ -1,0 +1,199 @@
+/* General Styles */
+body {
+    background-color: black; /* Black background */
+    /* font-family: 'Inter', sans-serif; */
+
+    font-family: 'Big Caslon', 'Garamond';
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centering the form */
+.h-screen {
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+/* Form styles */
+form {
+    /* background-color: #2f3e46; Dark grey background for the form */
+
+    background-color: black;
+
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* 3D box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    height: 400px;
+     border: rgb(122, 3, 196) 1.5px solid; 
+}
+
+/* form:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+   /* box-shadow: 0 8px 25px rgba(0, 255, 255, 0.6); Deep box shadow on hover} */
+ 
+   /* form:hover{
+    transform: none;
+   } */
+
+
+/* Input Fields */
+    input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 20px;
+    /* margin-right: 250px; */
+    border-radius: 25px; 
+    border: 2px solid rgb(122, 3, 196); /* Dark grey border */
+    background-color: black; /* Greyish background */
+    color: white;
+    font-size: 16px;}
+     /*transition: border-color 0.3s ease, background-color 0.3s ease; 
+
+
+/* Animations for input fields on focus */
+ input[type="text"]:focus,
+input[type="password"]:focus 
+{
+    border-color: rgb(122, 3, 196); 
+}
+    /* background-color: #2e3b40; Dark teal color on focus */
+   /* outline: none; */
+    /* box-shadow: 0 0 10px teal; Glow effect }*/
+
+/* 
+    input[type="text"]:focus,
+input[type="password"]:focus : hover {
+
+} */
+
+
+/* Labels */
+label {
+    display: block;
+    font-size: 18px;
+    color: #cbd5e1; /* Light grey */
+    margin-bottom: 8px;
+   
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* 3D shadow on hover */
+    /*transform: translateY(-3px);} Lifts the button on hover */
+
+
+/* Login Button */
+.bg-blue-500 {
+    background-color: rgb(122, 3, 196); /* Dark blue */
+    color: black;
+    border-radius: 25px;
+    font-family: 'Big Caslon', 'Garamond';
+    /* margin-top: -500px;
+    margin-bottom: 500px;
+    margin-left: -300px; */
+    /* text-align: center;
+    margin-top: -700px;
+    align: center; */
+}
+
+/* .bg-blue-500created{
+    margin-top: 30px;
+    margin-left: 10px;
+    background-color: blue;
+} */
+
+ /* .bg-blue-500:hover {
+    background-color: teal; 
+} */
+
+/* Forgot Password Link Styled as Button */
+a {
+    /* background-color: rgb(122, 3, 196); Dark blue */
+    color: white;
+/* border-radius: 15px;
+border-width: 20px; */
+
+    text-decoration: none;
+
+    /* box-sizing: border-box; */
+    
+    
+    padding: 5px;
+
+}
+
+a:hover {
+    text-decoration: underline;
+
+    /* background-color: teal;  */
+
+}
+
+.btn-link {
+    padding: 10px 20px;
+    background-color: #4b5563; /* Dark grey */
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #1e293b; /* Darker grey on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* 3D shadow */
+    transform: translateY(-3px);
+}
+
+/* Flexbox for buttons */
+.flex.items-center.justify-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

@@ -1,0 +1,12 @@
+/* Base styles */
+body {
+    background-color: #000000;
+    /* Dark background for the entire page */
+    color: #f5f5f5;
+    /* Light text color for contrast */
+}
+
+h1 {
+    color: #e0e0e0;
+    /* Light color for the heading */
+}

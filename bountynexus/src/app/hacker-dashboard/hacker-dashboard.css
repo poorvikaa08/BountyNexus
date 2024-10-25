@@ -1,0 +1,254 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* * {
+    box-sizing: border-box;
+} */
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+    background-color: black;
+    color: #ffffff;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Left-side Icon Section */
+.icon-container {
+    width: 20%;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    /* Stack icons vertically */
+    padding-top: 50px;
+    /* Top padding for icons */
+    position: fixed;
+    /* Fix the dashboard to the left side */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: #333 0.5px solid;
+}
+
+.icon {
+    margin: 20px 0;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ffffff;
+    /* Background for each icon */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.icon:hover {
+    background-color: #e0e0e0;
+    /* Hover effect for icons */
+}
+
+
+/* Right-side Main Content Section */
+.main-content {
+    margin-left: 20%;
+    /* Space for the fixed dashboard */
+    width: 80%;
+    /* Take up the remaining width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .icon-container {
+        width: 25%;
+        /* Adjust icon container width */
+    }
+
+    .main-content {
+        margin-left: 25%;
+        /* Adjust for responsive view */
+        width: 75%;
+        /* Adjust content width */
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Adjust title size */
+    }
+
+    p {
+        font-size: 1rem;
+        /* Adjust paragraph font size */
+    }
+}
+
+
+
+
+/* New STYLES from here */
+/* Styles for the dashboard */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Icons */
+.icon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: 20px 0;
+    background-color: #000000;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon:hover {
+    background-color: #505050;
+}
+
+.tooltip {
+    position: absolute;
+    left: 60px;
+    white-space: nowrap;
+    padding: 5px 10px;
+    background-color: #505050;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-10px);
+    /* Start with the tooltip slightly off to the left */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for opacity and sliding effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow for depth */
+}
+
+.icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    /* Slide in the tooltip */
+}
+
+#vulnerability-report {
+    background-color: #000000;
+    /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#vulnerability-report h1 {
+    font-size: 24px;
+    color: #2980B9;
+    /* Change as per your theme */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#vulnerability-report form {
+    display: flex;
+    flex-direction: column;
+}
+
+#vulnerability-report label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#vulnerability-report input[type="text"],
+#vulnerability-report input[type="url"],
+#vulnerability-report select,
+#vulnerability-report textarea {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#vulnerability-report input[type="text"]:focus,
+#vulnerability-report input[type="url"]:focus,
+#vulnerability-report select:focus,
+#vulnerability-report textarea:focus {
+    border-color: #2980B9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+}
+
+#vulnerability-report button {
+    background-color: #2980B9;
+    /* Primary button color */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#vulnerability-report button:hover {
+    background-color: #1d4ed8;
+}
+
+#vulnerability-report textarea {
+    resize: vertical;
+    min-height: 100px;
+}
