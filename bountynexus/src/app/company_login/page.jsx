@@ -110,7 +110,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import DOMPurify from 'dompurify';
-import styles from "./company_login.css";
+import "./company_login.css";
+
 
 export default function Login() {
   const router = useRouter();
