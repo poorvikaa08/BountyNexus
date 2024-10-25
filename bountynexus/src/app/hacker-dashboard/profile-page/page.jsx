@@ -30,6 +30,38 @@ const Profile = () => {
   //   ]
   // };
 
+  const handleProfilePictureChange = (event) => {
+    const selectedFile = event.target.files[0];
+
+    // Basic file validation (optional)
+    if (!selectedFile || !selectedFile.type.match('image/*')) {
+      alert('Please select a valid image file.');
+      return;
+    }
+
+    // Display a preview (optional)
+    
+    
+
+    // Handle file upload (replace with your backend logic)
+    // Assuming a backend API endpoint to handle uploads:
+    const formData = new FormData();
+    formData.append('profilePicture', selectedFile);
+    fetch('/api/upload-profile-picture', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Update profilePicture state with the actual uploaded image URL
+        setHacker({ ...hacker, profilePicture: data.imageUrl });
+      })
+      .catch(error => {
+        console.error('Error uploading profile picture:', error);
+        // Handle upload errors gracefully
+      });
+  };
+
   const hacker = {
     name: "Louie Smith", // Replace with dynamic username
     email: "louie.smith@example.com", // Replace with dynamic email
@@ -66,31 +98,37 @@ const Profile = () => {
           <i className="fa-solid fa-trophy" style={{ color: "#ffffff" }}></i>
           <span className="tooltip">Leaderboard</span>
         </div>
-        <div className="icon feedback-icon" onClick={() => handleNavigation('/')}>
+        {/* <div className="icon feedback-icon" onClick={() => handleNavigation('/')}>
           <i className="fa-solid fa-envelope" style={{ color: "#ffffff" }}></i>
           <span className="tooltip">Feedback</span>
-        </div>
+        </div> */}
       </div>
 
       <div className="main-content">
         {/* Main Profile Section */}
         <div className="profile-details">
           <div className="profile-header">
-            <Image src="/assets/logo.png" alt="Profile Photo" width={150} height={150} className="profile-photo" />
+            <Image src="/assets/image.jpg" alt="Profile Photo" width={150} height={150} className="profile-photo" style={{ borderRadius: '50%' , cursor: 'pointer'}}/>
+            <div>
+              <label htmlFor="profilePictureInput" style={{ cursor: 'pointer', color: "aqua" , fontWeight: "bold"}}>
+                Add Profile Picture
+                <input id="profilePictureInput" type="file" accept="image/*" onChange={handleProfilePictureChange} hidden />
+              </label>
+            </div>
             <h1>Louie Smith</h1> {/* Replace with dynamic username */}
             <p>Email: louie.smith@example.com</p> {/* Replace with dynamic email */}
             <p>Username: louie_smith</p>
           </div>
+        </div>
 
-          {/* Feedback Section */}
-          <div className="feedback-section">
-            <h2>Feedback Received</h2>
-            <ul className="feedback-list">
-              {hacker.feedbacks.map((feedback, index) => (
-                <li key={index} className="feedback-item">{feedback}</li>
-              ))}
-            </ul>
-          </div>
+        {/* Feedback Section */}
+        <div className="feedback-section">
+          <h2>Feedback Received</h2>
+          <ul className="feedback-list">
+            {hacker.feedbacks.map((feedback, index) => (
+              <li key={index} className="feedback-item">{feedback}</li>
+            ))}
+          </ul>
         </div>
       </div>
 

@@ -20,12 +20,9 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #020F1F;
 }
-.profile-details, .feedback-section {
-    display: inline-block;
-    padding: 20px;
-    vertical-align: top;
-    width: 50%;
-}
+
+
+
 .dashboard {
     display: flex;
     height: 100vh;
@@ -76,10 +73,10 @@ body {
     width: 80%;
     /* Take up the remaining width */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    justify-content: space-between;
     /* Center content vertically */
-    align-items: center;
+    align-items: flex-start;
     /* Center content horizontally */
     padding: 20px;
 }
@@ -231,22 +228,25 @@ p {
 .profile-page {
     display: flex;
     padding: 20px;
-    flex: 0 0 40%;
+    /* flex: 0 0 40%; */
     width: 40%;
+    margin-left: 2rem;
     align-items: space-between;
     justify-content: center;
     margin-top: 50px;
     background-color: #000000;
-    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     padding-left: 20px;
 }
 
 .profile-details {
-    width: 80%;
-    padding: 40px;
+    width: 60%;
+    margin-left: 6rem;
+    padding: 50px;
+    border: #333 solid 1px;
     background-color: #000000;
 }
+
 
 .profile-header {
     text-align: center;
@@ -261,13 +261,30 @@ p {
     border-radius: 50%;
 }
 
+.profile-photo:hover {
+    border-color: #00d3d3;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
 .feedback-section {
-    flex: 0 0 60%;
+    /* flex: 0 0 60%; */
     margin-top: 20px;
     padding: 20px;
     background-color: #000000;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    /* Adjusts feedback section to the right */
+    padding: 20px;
+    padding-left: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 2rem;
+    margin-left: 4rem;
+    background-color: #000000;
+    border: 1px solid #333;
+    /* Adds a dividing line between sections */
 }
 
 .feedback-list {
@@ -282,6 +299,12 @@ p {
     margin-top: 20px;
 }
 
+.feedback-item {
+    background-color: #686868;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
 .feedback-list li {
     background-color: #686868;
     padding: 10px;
