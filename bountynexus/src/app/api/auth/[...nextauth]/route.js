@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectMongoDB } from "../../../lib/mongodb"; // Ensure this points to your MongoDB connection file
 import User from "../../../models/hackermodels"; // Import your user model
+import bcrypt from "bcryptjs";
 
 const authOptions = {
     // Configure one or more authentication providers

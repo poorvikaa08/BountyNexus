@@ -3,32 +3,62 @@
 // import Link from "next/link";
 // import { useState } from "react";
 // import styles from "./login.css";
+// import { useRouter } from "next/navigation";
 
 // // import "/login.css";
 
 // export default function Login() {
-//     const [username, setUsername] = useState("");
+//     const [email, setEmail] = useState("");
 //     const [password, setPassword] = useState("");
 //     const [error, setError] = useState(null);
 
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-//         const res = await fetch("/login", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ username, password }),
-//         });
-//         const data = await res.json();
-//         if (data.error) {
-//             setError(data.error);
-//         } else {
-//             window.location.href = "/";
-//         }
-//     };
+//     const router = useRouter();
 
-//     return (
+//     const handleSubmit = async (e) => {
+//       e.preventDefault();
+    
+//       // Basic client-side validation (optional but recommended)
+//       if (!email || !password) {
+//         setError("Please enter both username and password.");
+//         return;
+//       }
+    
+//       const formData = {
+//         email,
+//         password,
+//       };
+    
+//       try {
+//         const res = await fetch("/api/login", {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify(formData),
+//         });
+    
+//         if (res.ok) {
+//           // Login successful - handle authentication (e.g., store token in localStorage)
+          
+//           router.push("/hacker-dashboard"); // Redirect to the homepage or dashboard
+//         }
+        
+//          else {
+//           const data = await res.json();
+//           setError(data.error || "Login failed. Please check your credentials.");
+//         }
+
+//       }
+
+        
+        
+//       catch (error) {
+//         console.error(error);
+//         setError("An unexpected error occurred. Please try again later.");
+//       }
+//     }
+
+//     return(
 //         <div className="h-screen flex justify-center items-center">
 //             <form
 //                 onSubmit={handleSubmit}
@@ -37,13 +67,13 @@
 //                 <h1 className="text-3xl font-bold mb-5">Login</h1>
 //                 <div className="mb-5">
 //                     <label className="block text-gray-700 text-sm font-bold mb-2">
-//                         Username
+//                         Email
 //                     </label>
 //                     <input
 //                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 //                         type="text"
-//                         value={username}
-//                         onChange={(e) => setUsername(e.target.value)}
+//                         value={email}
+//                         onChange={(e) => setEmail(e.target.value)}
 //                     />
 //                 </div>
 //                 <div className="mb-5">
@@ -60,8 +90,7 @@
 //                 <div className="flex items-center justify-between">
 //                     <button
 //                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-//                         type="submit" onClick={() => window.location.href = "/dashboard"}
-//                     >
+//                         type="submit">
 //                         Login
 //                     </button>
 
@@ -80,9 +109,8 @@
 //             </form>
 //         </div>
 //     );
-// }
 
-
+//   }
 
 
 
@@ -91,12 +119,12 @@
 
 'use client';
 
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./login.css";
-import { signIn, signin } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import DOMPurify from 'dompurify';
+import "./login.css";
+import Link from "next/link";
 
 export default function Login() {
   const router = useRouter();
@@ -118,14 +146,23 @@ export default function Login() {
       return;
     }
 
-    const res = await signIn("credentials", { email: DOMPurify.sanitize(email), password });
+    // Attempt to sign in
+    const res = await signIn("credentials", {
+      redirect: false, // Prevents automatic redirection
+      email: DOMPurify.sanitize(email),
+      password
+    });
 
     if (res.error) {
+      // Handle error if credentials are incorrect
       setError("Invalid email or password");
       return;
     }
 
-    router.replace("/dashboard"); // Redirect to dashboard on successful login
+    // Only redirect to dashboard if login is successful
+    if (res.ok) {
+      router.replace("/hacker-dashboard"); // Redirect to dashboard
+    }
   };
 
   const isEmailValid = (email) => {
