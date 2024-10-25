@@ -26,15 +26,15 @@ export default function Home() {
 
       <header className="header">
         <div style={{ display: " flex", border: "none", borderRadius: "50%" }}>
-          <Image src="/assets/logo.png" alt="logo" width={70} height={70} />
-          <div style={{ textAlign: "center", fontFamily: "Exodus", color: "aqua" }} className="logo" >Bounty<spam style={{ color: "white" }}>Nexus</spam></div>
+          <Image src="/assets/logo.png" alt="logo" width={60} height={60} />
+          <div style={{ textAlign: "center", fontFamily: "Poppins, sans-serif", color: "aqua" }} className="logo" >Bounty<spam style={{ color: "white" }}>Nexus</spam></div>
         </div>
 
-        <nav className="nav-list">
+        <nav className="nav-list" style={{ display: "flex" , gap: "2rem"}}>
           <Link href="/" className="nav-item">Home</Link>
           <Link href="/about" className="nav-item">About</Link>
           <Link href="/our-services" className="nav-item">Services</Link>
-          <Link href="review" className="nav-item">Leave a Review</Link>
+          <Link href="review" className="nav-item">Review us</Link>
         </nav>
         <div className="auth-buttons">
           <button className="login-btn" onClick={() => window.location.href = "/login"}>Login</button>
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </header >
 
-      {/* Main Content Section */}
+      {/*       
       < section className="main-content" >
         <div className="text-section">
           <h1>Join the Revolution of Ethical Hacking</h1>
@@ -51,9 +51,46 @@ export default function Home() {
           <p>Make the internet safer, one bug at a time.</p>
           <p>Find Bugs. Earn Rewards.</p>
         </div>
-      </section >
+      </section > */}
 
 
+<section className="section" style={{ backgroundColor: "black",fontFamily: "Poppins, sans-serif", alignItems: "center", justifyContent: "center", display: "flex"}}>
+        <div className="leftSection">
+          <h1 className="heading" style={{ color: "aqua" , fontWeight: "bold",fontSize: "50px", fontFamily: "Poppins, sans-serif", textAlign: "center"}}>Join the Revolution of Ethical Hacking</h1>
+          <p className="subheading">Discover Vulnerabilities. Secure the Future.</p>
+          
+        </div>
+        <div className="rightSection">
+          <div className="imageContainer">
+            {/* Replace the src with actual image path */}
+            <Image src="/assets/image1.jpg" className="image" width={500} height={300} />
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Main Content Section */}
+      <section className="section">
+        <div className="leftSection">
+          <h1 className="heading"><span style={{ color: "aqua" }}>Join the Revolution of Ethical Hacking</span> </h1>
+          <ul className="bulletPoints">
+            <li>Discover Vulnerabilities. Secure the Future.</li>
+            <li>Your bounty hunting skills are your superpower.</li>
+            <li>Make the internet safer, one bug at a time.</li>
+            <li>Find Bugs. Earn Rewards.</li>
+          </ul>
+
+        </div>
+        {/* <div className="rightSection">
+          <div className="imageContainer">
+            <Image src="/assets/imgg.jpg" className="image" width={450} height={300} style={{ borderRadius: "0px" }}/>
+
+          </div>
+        </div> */}
+      </section>
+
+      
 
 
 
@@ -82,8 +119,25 @@ export default function Home() {
         </div>
       </section>
 
-{/* Testimonials section */}
+      {/* Testimonials section */}
       <Testimonials />
+
+      <section className="stats-section">
+        <div className="stats-container">
+          <div className="stat-box">
+            <h3>$50M+</h3>
+            <p>Total Bounties Paid</p>
+          </div>
+          <div className="stat-box">
+            <h3>100K+</h3>
+            <p>Hackers</p>
+          </div>
+          <div className="stat-box">
+            <h3>150+</h3>
+            <p>Companies Protected</p>
+          </div>
+        </div>
+      </section>
 
 
 

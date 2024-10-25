@@ -20,7 +20,7 @@ body {
 .header {
     background-color: #000000;
     color: white;
-    padding: 1rem 1rem;
+    padding: 2.2rem 2.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,10 +83,10 @@ body {
 }
 
 .get-started-btn {
-    background-color: #570257;
+    background-color: #5bc0be;
 
-    color: #ffffff;
-    border: 1px solid #570257;
+    color: #000000;
+    border: 1px solid #5bc0be;
     border-radius: 3rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -99,9 +99,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    padding-top: 0;
+    margin: 0;
+    margin-top: none;
     background-color: black;
     /* Changed background to black */
     height: 100vh;
+    text-decoration: none;
+    min-height: calc(100vh - 70px);
     /* Full viewport height */
 }
 
@@ -157,8 +162,8 @@ body {
 }
 
 .section .startButton {
-    background-color: #570257;
-    color: white;
+    background-color: #479593;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 12px 25px;
     font-size: 16px;
@@ -170,7 +175,7 @@ body {
 
 .main-content .text-section {
 
-    padding-left: 10px;
+    padding-left: 4rem;
     /* margin-left: 3rem; */
 }
 
@@ -243,10 +248,42 @@ button:hover {
 }
 
 .text-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 1rem;
     font-size: 17px;
     margin-bottom: 15px;
 }
 
+/* Stats Section */
+.stats-section {
+    background-color: #000000;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    border: solid #454749;
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .stat-box h3 {
+    font-size: 1rem;
+    text-align: center;
+    border: #000000;
+    color: #479593;
+  }
+  
+  .stat-box p {
+    padding: 2px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ffffff;
+  }
 
 footer {
     background-color: #000000;
@@ -403,7 +440,7 @@ footer p {
     margin: 0 10px;
     /* background-color: #fff; */
     background-color: black;
-    border: 3px solid rgb(122, 3, 196);
+    border: 3px solid #570257;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     /* Soft shadow */
@@ -413,7 +450,7 @@ footer p {
 }
 
 .testimonial-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.019);
     /* Enlarge slightly on hover */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     /* Deeper shadow on hover */
@@ -443,10 +480,10 @@ footer p {
 /* Scroll Buttons */
 .scroll-left,
 .scroll-right {
-    background-color: rgb(122, 3, 196);
+    background-color: #570257;
     color: white;
     border: none;
-    padding: 10px;
+    padding: n10px 20px;
     font-size: 1.5rem;
     position: absolute;
     top: 50%;
@@ -459,7 +496,7 @@ footer p {
 
 .scroll-left:hover,
 .scroll-right:hover {
-    background-color: rgb(122, 3, 210);
+    background-color: #570257;
     /* Darken on hover */
 }
 
