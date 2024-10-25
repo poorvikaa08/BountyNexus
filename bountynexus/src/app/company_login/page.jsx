@@ -135,19 +135,16 @@ console.log(email, password);
     // Attempt to sign in
      if(email === "admin@gmail.com" && password === "admin") {
       console.log("Login successful");
-      router.push("/dashboard"); // Redirect to dashboard on successful login
+      router.push("/company_dashboard2"); // Redirect to dashboard on successful login
     } else {
       console.log("Login failed");
       setError("Invalid email or password");
-<<<<<<< HEAD
-=======
       return;
     }
 
     // Only redirect to dashboard if login is successful
     if (res.ok) {
-      router.replace("/company_dashboard"); // Redirect to dashboard
->>>>>>> ee213ecb067a89fdd42b56fccca0bfb53eb89398
+      router.replace("/company_dashboard2"); // Redirect to dashboard
     }
   };
 

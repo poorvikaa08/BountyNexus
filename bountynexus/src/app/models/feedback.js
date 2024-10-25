@@ -6,6 +6,6 @@ const feedbackSchema = new mongoose.Schema({
 });
 
 // Check if the model is already compiled, otherwise compile it
-const feedback = mongoose.models.Hacker || mongoose.model('Hacker', HackerSchema);
+const feedback = mongoose.models.Feedback || mongoose.model('Feedback', feedbackSchema);
 
 export default feedback;
