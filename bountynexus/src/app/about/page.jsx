@@ -22,7 +22,7 @@ const AboutUs = () => {
       <h3>About Bounty Nexus</h3>
       <p style={{ fontSize: "25px" }}>Bounty Nexus is a platform that connects hackers with companies to find and fix security vulnerabilities.</p>
 
-      <h3>How it Works</h3>
+      <h3 style={{ textAlign: "center", }}>How it Works</h3>
       <ul>
         <li>Hackers submit bugs they discover on our platform.</li>
         <li>Companies review these submissions and validate the reported vulnerabilities.</li>
@@ -32,10 +32,10 @@ const AboutUs = () => {
 
       <br></br>
 
-      <section style={{ display: "flex", alignItems: "space-around"  }}>
+      <section style={{ display: "flex", alignItems: "space-around" , textAlign: "center" }}>
         <div>
-          <h3>Benefits for Hackers</h3>
-          <ul>
+          <h3 style={{ textAlign: "center" }}>Benefits for Hackers</h3>
+          <ul style={{ textAlign: "center" , }}>
             <li>Earn rewards for your skills and knowledge.</li>
             <li>Gain recognition in the ethical hacking community.</li>
             <li>Help make the internet a safer place.</li>
