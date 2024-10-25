@@ -1,11 +1,23 @@
+body{
+  background-color: black;
+}
 .review {
-  padding: 50px;
+  padding: 2px;
   text-align: center;
+  border: 0.5px solid #22c8ff;
+  border-radius: 5px;
+  background-color: black;
+  width: 650px;
+  align:center;
+  width: 55%; /* Adjust the width as necessary */
+  margin: 0 auto; 
 }
 
 .review h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  align: center;
+  color: white;
 }
 
 .review form {
@@ -16,15 +28,18 @@
 .review label {
   display: block;
   margin-bottom: 10px;
+  color: white;
 }
 
 .review input,
 .review textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #22c8ff;
   border-radius: 5px;
   margin-bottom: 20px;
+  background-color: black;
+  border-radius: 5px;
 }
 
 .review textarea {
@@ -32,7 +47,7 @@
 }
 
 .review button {
-  background-color: #007bff;
+  background-color: #22c8ff;
   color: #fff;
   border: none;
   padding: 10px 20px;

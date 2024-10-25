@@ -1,0 +1,84 @@
+.leaderboard-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Border for table cells */
+}
+
+.leaderboard-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.leaderboard-table td {
+    font-size: 16px;
+    text-align: center; /* Center align text in cells */
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.leaderboard-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a; /* Black background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* White table background */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 12px;
+    border: 1px solid #007bff; /* Border color is dark blue */
+    color: #ffffff; /* White text color */
+}
+
+.leaderboard-table th {
+    background-color: #000000; /* Black background for table header */
+    color: white; /* White text for the header */
+}
+
+.leaderboard-table tr:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.leaderboard-table td {
+    font-size: 16px;
+    text-align: center;
+    color: #000000; /* Dark text for table cells */
+}
+
+h2 {
+    color: #ffffff; /* White heading text */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
