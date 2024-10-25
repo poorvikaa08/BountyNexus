@@ -22,7 +22,7 @@ export default function HomePage() {
                         <h2>I'm a hacker</h2>
                         <p>I want to use my skills to help make the internet a safer place.</p>
                     </div>
-                    <div className="option-card company" onClick={() => window.location.href = "/company/login"}>
+                    <div className="option-card company" onClick={() => window.location.href = "/company_login"}>
                         <h2>I'm a company</h2>
                         <p>I want to ensure my company's security is safe by rewarding hackers who find vulnerabilities.</p>
                     </div>
