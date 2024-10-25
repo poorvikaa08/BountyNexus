@@ -8,7 +8,7 @@ export default function BugsPage() {
     useEffect(() => {
         const fetchBugs = async () => {
             try {
-                const response = await fetch('/api/bugs'); // Fetch from the API route
+                const response = await fetch('/api/addbugs'); // Fetch from the API route
                 const data = await response.json();
                 setBugs(data.bugs);
             } catch (error) {
@@ -35,7 +35,9 @@ export default function BugsPage() {
                     {bugs.map((bug) => (
                         <li key={bug._id}>
                             <h2>{bug.title}</h2>
+                            <p>{bug.email}</p>                    
                             <p>{bug.description}</p>
+                            <p>{bug.severity}</p>
                         </li>
                     ))}
                 </ul>

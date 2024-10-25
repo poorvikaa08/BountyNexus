@@ -23,6 +23,7 @@ export async function POST(request) {
 export async function GET(request) {
     //await connectMongoDB();
     const bugs = await Bugs.find({});
+    console.log(bugs);
     return NextResponse.json({ bugs });
 }
 
