@@ -1,84 +1,130 @@
+/* page.css */
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #ffffff;
+}
+
+h2, h3 {
+  font-weight: bold;
+  color: #00aaff;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0 0 15px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* About Us Section */
 .about-us {
-    padding: 50px;
-    text-align: center;
+  padding: 50px;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.about-us h2, .about-us h3 {
+  text-transform: uppercase;
+  color: #00e1ff;
+}
+
+.about-us ul {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+
+.about-us li {
+  margin-bottom: 10px;
+  list-style-type: circle;
+}
+
+.about-us li p {
+  font-size: 1rem;
+  color: lightgray;
+}
+
+.team {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.team-member, .testimonial {
+  background: #222;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 220px;
+}
+
+.team-member h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #00e1ff;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: lightgray;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.testimonial h4 {
+  font-size: 1rem;
+  color: #00e1ff;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul li {
+  color: #ccc;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+/* FAQ Section */
+.about-us ul li strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #00e1ff;
+}
+
+.about-us ul li p {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: lightgray;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .team, .testimonials {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .about-us h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+
+  .team-member, .testimonial {
+    width: 80%;
   }
-  
-  .about-us p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
-  
-  .about-us ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .about-us li {
-    margin-bottom: 10px;
-  }
-  
-  .team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 40px;
-    background-color: #007bff; /* Set blue background for team section */
-  }
-  
-  .team-member {
-    text-align: center;
-    width: 25%;
+
+  .about-us {
     padding: 20px;
   }
-  
-  .team-member img {
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .team-member h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .team-member p {
-    font-size: 16px;
-  }
-  
-  .testimonials {
-    background-color: #000; /* Set black background for testimonials */
-    padding: 20px;
-    margin-top: 40px;
-  }
-  
-  .testimonial {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .testimonial p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .testimonial h4 {
-    font-weight: bold;
-  }
-  
-  .faq {
-    margin-top: 40px;
-  }
-  
-  .faq h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+}

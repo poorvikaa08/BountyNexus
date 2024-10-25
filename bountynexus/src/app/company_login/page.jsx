@@ -123,8 +123,8 @@ export default function Login() {
     e.preventDefault();
 
     // Basic client-side validation
-    if (!isEmailValid(email)) {
-      setError("Please enter a valid email address.");
+    if (!email) {
+      setError("Please enter an email address.");
       return;
     }
 
@@ -132,30 +132,24 @@ export default function Login() {
       setError("Password cannot be empty.");
       return;
     }
-
+console.log(email, password);
     // Attempt to sign in
-    // const res = await signIn("credentials", {
-    //   redirect: false, // Prevents automatic redirection
-    //   email: DOMPurify.sanitize(email),
-    //   password
-    // });
-
-    // if (res.error) {
-    //   // Handle error if credentials are incorrect
-    //   setError("Invalid email or password");
-    //   return;
-    // }
+     if(email === "admin@gmail.com" && password === "admin") {
+      console.log("Login successful");
+      router.push("/company_dashboard2"); // Redirect to dashboard on successful login
+    } else {
+      console.log("Login failed");
+      setError("Invalid email or password");
+      return;
+    }
 
     // Only redirect to dashboard if login is successful
-    if (email === "admin@gmail.com" && password === "admin") {
-      router.replace("/company_dashboard"); // Redirect to dashboard
+    if (res.ok) {
+      router.replace("/company_dashboard2"); // Redirect to dashboard
     }
   };
 
-  const isEmailValid = (email) => {
-    const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*\.\w{2,4}$/;
-    return regex.test(email);
-  };
+ 
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -168,14 +162,14 @@ export default function Login() {
           </label>
           <input
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-              error && !isEmailValid(email) ? "border-red-500" : ""
+              error ? "border-red-500" : ""
             }`}
             type="text"
             value={email}
             onChange={(e) => setEmail(DOMPurify.sanitize(e.target.value))} // Sanitize email input
             required
           />
-          {error && !isEmailValid(email) && (
+          {error && (
             <p className="text-red-500 text-sm mt-1">Invalid email address.</p>
           )}
         </div>

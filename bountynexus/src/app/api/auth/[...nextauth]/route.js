@@ -10,15 +10,16 @@ const authOptions = {
         CredentialsProvider({
             name: "credentials",
             credentials: {
-                username: { label: "Email", type: "text", placeholder: "jsmith" },
+                email: { label: "Email", type: "text", placeholder: "jsmith" },
                 password: { label: "Password", type: "password" },
             },
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 // Add logic here to look up the user from the credentials supplied
                 await connectMongoDB(); // Ensure your MongoDB is connected
                 
                 // Find user in database
                 const user = await User.findOne({ email: credentials.email });
+                console.log(user);
                 
                 if (!user) {
                     throw new Error("User not found");
@@ -30,13 +31,16 @@ const authOptions = {
                 if (!isValid) {
                     throw new Error("Invalid username or password");
                 }
+                if(isValid){
+                    console.log("User is valid");
+                }
                 
                 // If user is valid, return user object
-                return {
-                    id: user._id,
-                    name: user.username,
-                    email: user.email,
-                };
+                // return {
+                //     id: user._id,
+                //     name: user.username,
+                //     email: user.email,
+                // };
             },
         }),
     ],

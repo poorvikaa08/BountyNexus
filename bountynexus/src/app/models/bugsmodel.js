@@ -8,6 +8,6 @@ const bugsSchema = new mongoose.Schema({
 });
 
 // Check if the model is already compiled, otherwise compile it
-const bugs = mongoose.models.Hacker || mongoose.model('Hacker', HackerSchema);
+const bugs = mongoose.models.Bugs || mongoose.model('Bugs', bugsSchema);
 
 export default bugs;
