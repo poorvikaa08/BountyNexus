@@ -36,7 +36,7 @@ const Dashboard = () => {
           <Image src="/assets/logo.png" alt="logo" width={40} height={40} />
         </div>
 
-        <div className="icon profile-icon" onClick={() => handleNavigation('/profile')}>
+        <div className="icon profile-icon" onClick={() => handleNavigation('/hacker-dashboard/profile-page')}>
           <i className="fa-solid fa-user" style={{ color: "#ffffff" }}></i>
           <span className="tooltip">Profile</span>
         </div>
