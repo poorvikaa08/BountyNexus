@@ -36,11 +36,11 @@ const authOptions = {
                 }
                 
                 // If user is valid, return user object
-                // return {
-                //     id: user._id,
-                //     name: user.username,
-                //     email: user.email,
-                // };
+                return {
+                    id: user._id,
+                    name: user.username,
+                    email: user.email,
+                };
             },
         }),
     ],

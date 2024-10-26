@@ -13,7 +13,9 @@ export async function POST(request) {
         fullName,
         username,
         email,
-        password: HashedPassword});
+        password: HashedPassword,
+        score: 0
+    });
 
 
     return NextResponse.json({message: "Success"});

@@ -33,6 +33,7 @@ export async function POST(req) {
         }
 
         // If the email and password match, return a success response
+        localStorage.setItem('userEmail', email);
         return NextResponse.json({ message: "Login successful", userId: user._id });
 
     } catch (error) {
