@@ -66,7 +66,7 @@ input:focus {
 /* Submit Button */
 button {
     background-color: #22c8ff;
-    color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 3rem;
     padding: 0.75rem 1.5rem;
@@ -77,10 +77,14 @@ button {
 
 /* Submit Button Hover State */
 button:hover {
-    background-color: #22c8ff;
+    background-color: #24a3cd;
     /* Darker shade on hover */
 }
 
+button:clicked {
+    background-color: #1385ac;
+    /* Darker shade on click */
+}
 /* Link Styles */
 a {
     color: #4a90e2;

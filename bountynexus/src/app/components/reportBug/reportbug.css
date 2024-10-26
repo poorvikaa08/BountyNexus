@@ -1,0 +1,52 @@
+.dark-theme {
+    background-color: #181818;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dark-theme h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.dark-theme form {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #2980B9;
+    border-radius: 10px;
+}
+
+.dark-theme label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.dark-theme input, .dark-theme textarea, .dark-theme select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.dark-theme button {
+    background-color: #2980B9;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dark-theme button:hover {
+    background-color: #16658B;
+}
