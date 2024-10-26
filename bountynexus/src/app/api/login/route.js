@@ -2,6 +2,7 @@ import Hacker from "../../models/hackermodels";
 import { NextResponse } from "next/server";
 import { connectMongoDB } from "../../lib/mongodb"; // Import your MongoDB connection logic
 import bcrypt from "bcryptjs";  // Make sure bcrypt is imported
+import Log from "../../models/loginmodels";
 
 export async function POST(req) {
     await connectMongoDB();
@@ -32,8 +33,12 @@ export async function POST(req) {
             return NextResponse.json({ message: "Invalid email or password" }, { status: 400 });
         }
 
-        // If the email and password match, return a success response
-        localStorage.setItem('userEmail', email);
+        // If the email and password match, log the successful login
+        await Log.create({ 
+            email, 
+            name: email.replace(/@gmail.com$/, "") // Store name without the domain
+        });
+
         return NextResponse.json({ message: "Login successful", userId: user._id });
 
     } catch (error) {

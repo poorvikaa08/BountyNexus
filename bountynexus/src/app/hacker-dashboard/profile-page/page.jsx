@@ -2,7 +2,7 @@
 'use client';
 
 
-// import React from 'react';
+//import React from 'react';
 import './profile-page.css';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -11,11 +11,15 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import styles from "./profile-page.css";
 import Dashbar from '../../components/dashbar/dashbar.jsx';
 import HackerProfile from '@/app/components/profile/page';
+import Log from '../../models/loginmodels';
+import { connectMongoDB } from "../../lib/mongodb";
+import axios from 'axios';
 
 
-const Profile = () => {
+const Profile = async () => {
 
   const router = useRouter();
+  await connectMongoDB();
 
   const handleNavigation = (path) => {
     router.push(path);
@@ -65,8 +69,8 @@ const Profile = () => {
   };
 
   const hacker = {
-    name: "Louie Smith", // Replace with dynamic username
-    email: "louie.smith@example.com", // Replace with dynamic email
+    name: Log[0].name, // Replace with dynamic username
+    email: Log[0].email, // Replace with dynamic email
     profilePicture: "https://wallpapercave.com/wp/wp3754424.jpg",
     feedbacks: [
       "Great job on the recent bug fix! - User 1",
