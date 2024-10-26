@@ -1,381 +1,130 @@
-/* Profile.module.css */
+/* profile-page.css */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
+/* Base styles for the profile page */
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
+    background-color: #f0f4f7;
+    /* Light grey background */
 }
 
-body {
-    color: #f3f4f6;
-    font-family: 'Inter', sans-serif;
-    background-color: #020F1F;
-}
-
-
-
-.dashboard {
-    display: flex;
-    height: 100vh;
-    background-color: black;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-/* Left-side Icon Section */
-.icon-container {
-    width: 20%;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    /* Stack icons vertically */
-    padding-top: 50px;
-    /* Top padding for icons */
-    position: fixed;
-    /* Fix the dashboard to the left side */
-    left: 0;
-    top: 0;
-    bottom: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-right: #333 0.5px solid;
-}
-
-.icon {
-    margin: 20px 0;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    background-color: #ffffff;
-    /* Background for each icon */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.icon:hover {
-    background-color: #e0e0e0;
-    /* Hover effect for icons */
-}
-
-.main-content {
-    /* Space for the fixed dashboard */
-    width: 80%;
-    /* Take up the remaining width */
-    display: flex;
-
-    justify-content: space-between;
-    /* Center content vertically */
-    align-items: flex-start;
-    /* Center content horizontally */
-    padding: 20px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-
-
-
-/* New STYLES from here */
-/* Styles for the dashboard */
-.dashboard {
-    display: flex;
-    height: 100vh;
-}
-
-/* Sidebar Icons */
-.icon-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    margin: 20px 0;
-    background-color: #000000;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon:hover {
-    background-color: #505050;
-}
-
-.tooltip {
-    position: absolute;
-    left: 60px;
-    white-space: nowrap;
-    padding: 5px 10px;
-    background-color: #505050;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-top: 8px;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(-10px);
-    /* Start with the tooltip slightly off to the left */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Smooth transition for opacity and sliding effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    /* Add a subtle shadow for depth */
-}
-
-.icon:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
-    /* Slide in the tooltip */
-}
-
-.container {
-    max-width: 600px;
-    margin: 40px auto;
-    /* Added margin for spacing */
-    padding: 20px;
-    text-align: center;
-    background-color: #000000;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.title {
-    font-size: 2rem;
-    margin: 10px 0;
-    color: rgb(10, 211, 211);
-}
-
-.profilePicture {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-    border: 2px solid rgb(10, 211, 211);
-    display: flex;
-}
-
-.email {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    margin-bottom: 20px;
-}
-
-.feedbackTitle {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    color: #ffffff;
-}
-
-.feedbackList {
-    list-style-type: none;
-    padding: 0;
-}
-
-.feedbackItem {
-    background: #1a1a1a;
-    border: 1px solid #454749;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    /* Ensure text color is white */
-    transition: background-color 0.3s ease;
-}
-
-.feedbackItem:hover {
-    background-color: rgb(80, 202, 202);
-    color: #000000;
-}
-
-.profile-page {
-    display: flex;
-    padding: 20px;
-    /* flex: 0 0 40%; */
-    width: 40%;
-    margin-left: 2rem;
-    align-items: space-between;
-    justify-content: center;
-    margin-top: 50px;
-    background-color: #000000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    padding-left: 20px;
-}
-
-.profile-details {
-    width: 60%;
-    margin-left: 6rem;
-    padding: 50px;
-    border: #333 solid 1px;
-    background-color: #000000;
-}
-
-
-.profile-header {
-    text-align: center;
-}
-
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border: 2px solid rgb(10, 211, 211);
-    margin-bottom: 20px;
-
-    border-radius: 50%;
-}
-
-.profile-photo:hover {
-    border-color: #00d3d3;
-    transform: scale(1.05);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-}
-.feedback-section {
-    /* flex: 0 0 60%; */
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #000000;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    width: 50%;
-    /* Adjusts feedback section to the right */
-    padding: 20px;
-    padding-left: 3rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-right: 2rem;
+/* Profile container */
+.profile-container {
     margin-left: 4rem;
-    background-color: #000000;
-    border: 1px solid #333;
-    /* Adds a dividing line between sections */
-}
-
-.feedback-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    padding: 20px;
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Profile header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Profile picture */
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00bcd4;
+    /* Aqua border */
+}
+
+.profile-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.profile-info h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #003366;
+    /* Dark blue */
+}
+
+.profile-info p {
+    font-size: 16px;
+    color: #666666;
+    /* Grey text for email */
+}
+
+/* Feedback section */
+.feedback-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.feedback-section h3 {
+    font-size: 22px;
+    color: #00796b;
+    /* Teal for section headers */
+    margin-bottom: 15px;
 }
 
 .feedback-item {
-    background-color: #686868;
+    background-color: #e0f7fa;
+    /* Light aqua background */
+    border-left: 4px solid #00796b;
+    /* Teal left border */
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-  }
-.feedback-list li {
-    background-color: #686868;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
+.feedback-item p {
+    font-size: 14px;
+    color: #333333;
+}
 
-/* Responsive design */
+/* Upload button */
+.upload-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.upload-button:hover {
+    background-color: #004d40;
+    /* Darker teal on hover */
+}
+
+/* Dashboard and sidebar styles */
+.dashbar-container {
+    margin-top: 20px;
+}
+
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .title {
-        font-size: 1.75rem;
+    .profile-info {
+        text-align: center;
+        margin-left: 0;
     }
 
-    .email {
-        font-size: 1rem;
-    }
-
-    .feedbackTitle {
-        font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .profilePicture {
-        width: 120px;
-        height: 120px;
-    }
-
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .email {
-        font-size: 0.9rem;
-    }
-
-    .feedbackTitle {
-        font-size: 1.1rem;
-    }
-
-    .feedbackItem {
-        font-size: 0.9rem;
-    }
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .icon-container {
-        width: 25%;
-        /* Adjust icon container width */
-    }
-
-    .main-content {
-        margin-left: 25%;
-        /* Adjust for responsive view */
-        width: 75%;
-        /* Adjust content width */
-    }
-
-    h1 {
-        font-size: 2rem;
-        /* Adjust title size */
-    }
-
-    p {
-        font-size: 1rem;
-        /* Adjust paragraph font size */
+    .feedback-section {
+        margin-top: 20px;
     }
 }

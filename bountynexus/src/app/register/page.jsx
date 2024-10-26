@@ -95,7 +95,7 @@ export default function HackerRegister() {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <form onSubmit={handleSubmit} className="bg-white p-10 rounded shadow-md w-1/3">
+      <form onSubmit={handleSubmit} className="bg-white p-10 rounded shadow-md w-1/3" style={{alignItems: "center", marginTop: "7rem"}}>
         <h1 className="text-3xl font-bold mb-5" style={{ textAlign: "center" }}>Register</h1>
 
         {/* Full Name Field */}
