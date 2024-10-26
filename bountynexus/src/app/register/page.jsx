@@ -11,6 +11,7 @@ export default function HackerRegister() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [points, setPoints] = useState(0);
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -57,7 +58,7 @@ export default function HackerRegister() {
       if (res.ok) {
         const form = e.target;
         form.reset(); // Clear form fields after successful registration
-        router.push("/login");
+        router.replace("/login");
       } else {
         //const data = await res.json();
         setError("Registration failed");
@@ -176,7 +177,7 @@ export default function HackerRegister() {
         {/* Link to login */}
         <div className="button-container" style={{ textAlign: "center" }}>
           <Link href="/login">
-            Already have an account?  Login
+            Already have an account?  Login
           </Link>
         </div>
 
