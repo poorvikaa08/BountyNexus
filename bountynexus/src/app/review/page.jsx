@@ -16,9 +16,9 @@ const Review = () => {
   };
 
   return (
-    <section className="review">
+    <section className="review" style={{ backgroundColor: 'black', color: 'white' , textAlign: 'center', padding: '10px', justifyContent: 'center', width: '40%', overflow: 'hidden'}}>
       <h2>Leave a Review</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , border: '1px solid #ccc', padding: '50px', borderRadius: '1px', borderColor: 'solid 0.2px aqua'}}>
         <label htmlFor="name">Your Name:</label>
         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
         <label htmlFor="email">Your Email:</label>
@@ -27,7 +27,7 @@ const Review = () => {
         <textarea id="like" value={like} onChange={(e) => setLike(e.target.value)} required></textarea>
         <label htmlFor="dislike">What did you not like about us?</label>
         <textarea id="dislike" value={dislike} onChange={(e) => setDislike(e.target.value)}></textarea>
-        <button type="submit">Submit Review</button>
+        <button type="submit" style={{color: "black", fontWeight: "bold"}}>Submit Review</button>
       </form>
     </section>
   );

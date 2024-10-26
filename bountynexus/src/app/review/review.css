@@ -4,11 +4,8 @@ body{
 .review {
   padding: 2px;
   text-align: center;
-  border: 0.5px solid #22c8ff;
-  border-radius: 5px;
   background-color: black;
   width: 650px;
-  align:center;
   width: 55%; /* Adjust the width as necessary */
   margin: 0 auto; 
 }
@@ -16,7 +13,6 @@ body{
 .review h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  align: center;
   color: white;
 }
 
@@ -53,4 +49,12 @@ body{
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.review button:hover {
+  background-color: #3a9ee0;
+}
+
+.review button:active {
+  background-color: #1f7ed0;
 }
